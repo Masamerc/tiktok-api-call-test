@@ -1,0 +1,8 @@
+[Python to Sheets]
+https://erikrood.com/Posts/py_gsheets.html
+*need to enable Google Sheets API too
+
+[Tiktok API]
+- get auth_code by authorizing the app
+- use auth_code an app secret to get access token
+- use access_token to get response 
