@@ -1,0 +1,24 @@
+# list of metrics
+metrics:
+    - "impressions"
+data_level: "AUCTION_CAMPAIGN"
+end_date: 
+order_type:  
+order_field: 
+page_size: 10
+start_date: 
+advertiser_id: 
+filters:
+    - field_name:
+      filter_type:
+      filter_value:
+    - field_name:
+      filter_type:
+      filter_value:
+service_type: "AUCTION"
+lifetime: True
+report_type: "BASIC"
+page: 1
+dimensions:
+    - "age"
+    - "campaign_id"

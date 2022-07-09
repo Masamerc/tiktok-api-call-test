@@ -1,22 +1,14 @@
 import pygsheets
 import pandas as pd
 
-from get_records import Args, get
+from tonton_utils.args import parse_query_into_args
+from tonton_utils.get_records import get
 
-def parse(resp):
+
+def parse_response(resp):
     data = resp["data"]["list"]
     return [{**datum["dimensions"], **datum["metrics"]} for datum in data]
 
-
-args = Args(
-        metrics=["impressions"],
-        data_level="AUCTION_CAMPAIGN",
-        advertiser_id="7062557572875763714",
-        service_type="AUCTION",
-        lifetime="true",
-        report_type="BASIC",
-        dimensions=["campaign_id"]
-    )
 
 
 resp_json = get(args.json())

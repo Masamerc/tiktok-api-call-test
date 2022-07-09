@@ -2,16 +2,14 @@
 import json
 import requests
 
-from six import string_types
-from urllib.parse import urlencode, urlunparse  # noqa
+from urllib.parse import urlunparse
 
-from secrets import API_KEY, AUTH_CODE
+from secrets import API_KEY, AUTH_CODE, APP_ID
 
 PATH = "/open_api/v1.2/oauth2/access_token/"
 
 
-def build_url(path, query=""):
-    # type: (str, str) -> str
+def build_url(path: str, query: str="") -> str:
     """
     Build request URL
     :param path: Request path
@@ -21,8 +19,8 @@ def build_url(path, query=""):
     scheme, netloc = "https", "business-api.tiktok.com"
     return urlunparse((scheme, netloc, path, "", query, ""))
 
-def post(json_str):
-    # type: (str) -> dict
+
+def post(json_str: str) -> dict:
     """
     Send POST request
     :param json_str: Args in JSON format
@@ -36,9 +34,10 @@ def post(json_str):
     rsp = requests.post(url, headers=headers, json=args)
     return rsp.json()
 
+
 if __name__ == '__main__':
     secret = API_KEY
-    app_id = "7107453944774787074"
+    app_id = APP_ID
     auth_code = AUTH_CODE
 
     # Args in JSON format
