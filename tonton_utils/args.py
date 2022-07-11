@@ -45,7 +45,7 @@ class Args:
     def json(self):
         return json.dumps(self.get_input_args())
 
-    def set_reporting_date(self):
+    def set_start_end_date_to_current_date(self):
         self.end_date = datetime.today()
         self.start_date = self.end_date - timedelta(days=1)
         self.end_date, self.start_date = self.end_date.strftime("%Y-%m-%d"), self.start_date.strftime("%Y-%m-%d")
