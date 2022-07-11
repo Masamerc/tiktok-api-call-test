@@ -2,8 +2,8 @@
 import json
 import yaml
 from dataclasses import dataclass, asdict
+from datetime import datetime, timedelta
 from typing import List, Optional
-
 
 @dataclass
 class Filter:
@@ -44,6 +44,11 @@ class Args:
     
     def json(self):
         return json.dumps(self.get_input_args())
+
+    def set_reporting_date(self):
+        self.end_date = datetime.today()
+        self.start_date = self.end_date - timedelta(days=1)
+        self.end_date, self.start_date = self.end_date.strftime("%Y-%m-%d"), self.start_date.strftime("%Y-%m-%d")
 
 
 def parse_query_into_args() -> Args:

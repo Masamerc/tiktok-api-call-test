@@ -17,20 +17,35 @@ filter_flag: False
 
 # list of metrics
 metrics:
+    - "campaign_name"
+    - "campaign_id"
+    - "adgroup_name"
     - "impressions"
     - "clicks"
+    - "spend"
+    - "cpc"
+    - "cpm"
+    - "ctr"
+    - "conversion"
+    - "cost_per_conversion"
+    - "conversion_rate"
+    - "video_play_actions"
+    - "video_watched_2s"
+    - "video_watched_6s"
+    - "video_views_p100"
+    - "average_video_play"
 dimensions:
-    - "campaign_id"
-    - "campaign_name"
+    - "ad_id"
+    - "stat_time_day"
 
 advertiser_id: "7062557572875763714"
 service_type: "AUCTION"
 report_type: "BASIC"
-data_level: "AUCTION_CAMPAIGN"
-lifetime: True
-start_date: 
-end_date: 
+data_level: "AUCTION_AD"
+lifetime: False
+start_date: "2022-07-01"
+end_date: "2022-07-02"
 order_type:  
 order_field: 
 page: 1
-page_size: 10
+page_size: 200
