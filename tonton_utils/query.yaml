@@ -1,24 +1,36 @@
+Note: >
+    For API reference and docs
+    go to https://ads.tiktok.com/marketing_api/docs?id=1707957200780290
+
+#------------------------------------------------------------#
+
+filter_flag: False
+# filters:
+#     - field_name:
+#       filter_type:
+#       filter_value:
+#     - field_name:
+#       filter_type:
+#       filter_value:
+
+#------------------------------------------------------------#
+
 # list of metrics
 metrics:
     - "impressions"
+    - "clicks"
+dimensions:
+    - "campaign_id"
+    - "campaign_name"
+
+advertiser_id: "7062557572875763714"
+service_type: "AUCTION"
+report_type: "BASIC"
 data_level: "AUCTION_CAMPAIGN"
+lifetime: True
+start_date: 
 end_date: 
 order_type:  
 order_field: 
-page_size: 10
-start_date: 
-advertiser_id: 
-filters:
-    - field_name:
-      filter_type:
-      filter_value:
-    - field_name:
-      filter_type:
-      filter_value:
-service_type: "AUCTION"
-lifetime: True
-report_type: "BASIC"
 page: 1
-dimensions:
-    - "age"
-    - "campaign_id"
+page_size: 10

@@ -47,22 +47,44 @@ class Args:
 
 
 def parse_query_into_args() -> Args:
-    with open("query.yaml", "r") as y:
+    """
+    Parse arguments from query.yaml
+    and return 
+    """
+    with open("./tonton_utils/query.yaml", "r") as y:
         query = yaml.safe_load(y)
 
+    if query["filter_flag"]:
+        return Args(
+            metrics=query["metrics"],
+            data_level=query["data_level"],
+            end_date=query["end_date"],
+            order_type=query["order_type"],
+            order_field=query["order_field"],
+            page_size=query["page_size"],
+            start_date=query["start_date"],
+            advertiser_id=query["advertiser_id"],
+            filters=query["filters"],
+            service_type=query["service_type"],
+            lifetime=query["lifetime"],
+            report_type=query["report_type"],
+            page=query["page"],
+            dimensions=query["dimensions"]
+        )
+    
     return Args(
-        metrics=query["metrics"],
-        data_level=query["data_level"],
-        end_date=query["end_date"],
-        order_type=query["order_type"],
-        order_field=query["order_field"],
-        page_size=query["page_size"],
-        start_date=query["start_date"],
-        advertiser_id=query["advertiser_id"],
-        filters=query["filters"],
-        service_type=query["service_type"],
-        lifetime=query["lifetime"],
-        report_type=query["report_type"],
-        page=query["page"],
-        dimensions=query["dimensions"]
-    )
+            metrics=query["metrics"],
+            data_level=query["data_level"],
+            end_date=query["end_date"],
+            order_type=query["order_type"],
+            order_field=query["order_field"],
+            page_size=query["page_size"],
+            start_date=query["start_date"],
+            advertiser_id=query["advertiser_id"],
+            service_type=query["service_type"],
+            lifetime=query["lifetime"],
+            report_type=query["report_type"],
+            page=query["page"],
+            dimensions=query["dimensions"]
+        )
+    

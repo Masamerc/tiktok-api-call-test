@@ -4,7 +4,7 @@ import requests
 
 from urllib.parse import urlunparse
 
-from secrets import API_KEY, AUTH_CODE, APP_ID
+from config.secrets import API_KEY, AUTH_CODE, APP_ID
 
 PATH = "/open_api/v1.2/oauth2/access_token/"
 

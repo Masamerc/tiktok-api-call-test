@@ -5,7 +5,7 @@ import requests
 from six import string_types
 from urllib.parse import urlencode, urlunparse
 
-from secrets import TOKEN
+from config.secrets import TOKEN
 
 
 ACCESS_TOKEN = TOKEN
