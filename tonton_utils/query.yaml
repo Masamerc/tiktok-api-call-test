@@ -34,18 +34,38 @@ metrics:
     - "video_watched_6s"
     - "video_views_p100"
     - "average_video_play"
+
+# list of dimensions:
+# only one ID dimension and one time dimension allowed in one request
 dimensions:
     - "ad_id"
     - "stat_time_day"
 
 advertiser_id: "7062557572875763714"
+
+# AUCTION or RESERVATION
 service_type: "AUCTION"
+
+# BASIC, AUDIENCE or PLAYABLE_MATERIAL
 report_type: "BASIC"
+
+# AUCTION_AD, AUCTION_ADGROUP, AUCTION_ADVERTISER, AUCTION_CAMPAIGN, RESERVATION_AD,
+# RESERVATION_ADGROUP, RESERVATION_ADVERTISER or RESERVATION_CAMPAIGN
 data_level: "AUCTION_AD"
-lifetime: False
-start_date: "2022-07-01"
-end_date: "2022-07-02"
-order_type:  
+
+# lifetime metrics: 
+# if lifetime = True, start_date and end_date will be ignored
+lifetime: True
+
+start_date: ""
+end_date: ""
+
+# field to sort the data by
 order_field: 
+# ADC or DESC
+order_type:
+
+# current number of pages
 page: 1
+# pagination size 1-1000
 page_size: 200
