@@ -62,7 +62,7 @@ end_date: ""
 
 # field to sort the data by
 order_field: 
-# ADC or DESC
+# ASC or DESC
 order_type:
 
 # current number of pages
